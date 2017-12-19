@@ -17,13 +17,24 @@
 
   var saveButton = $('#save-button');
   var loadButton = $('#load-button');
+  
 
+  localStorage = window.localStorage;
   /**
    * Gets the text from the element for you
    * @return {String}
    */
+  saveButton.click(function(){
+     localStorage.setItem('savedItem', getText()); 
+     console.log(getText());
+  })  
+  
+  loadButton.click(function(){
+    setText(localStorage.getItem('savedItem'));
+  })
+  
   function getText() {
-    return $('#save-me').val();
+     return $('#save-me').val();
   }
 
   /**
