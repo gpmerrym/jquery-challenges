@@ -26,7 +26,7 @@
    */
   saveButton.click(function(){
      localStorage.setItem('savedItem', getText()); 
-     console.log(getText());
+     //console.log(getText());
   })  
   
   loadButton.click(function(){
