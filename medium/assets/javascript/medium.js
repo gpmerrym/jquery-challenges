@@ -50,8 +50,11 @@
   const resetHits = $("#num-resets");
   const body = $("body");
 
-  var audio = new Audio();
-  audio.src="assets\audio\Hockey Puck Slap-SoundBible.com-318266142.wav"  
+
+  //audio file
+  
+  let audio = new Audio("assets/audio/Hockey Puck Slap-SoundBible.com-318266142.wav");
+  
   
   //jQuery equivelent to window.onload = function{}
   //code in here wont run until page loads
@@ -61,7 +64,7 @@
    
       teamOneNumShots.html(parseInt(teamOneNumShots.html()) + 1);
 
-      audio.play();
+      
 
       function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -73,8 +76,9 @@
       console.log(randomNumber);
 
       if(randomNumber > 60){
-        teamTwoNumHits.html(parseInt(teamTwoNumHits.html()) + 1)
+        teamOneNumHits.html(parseInt(teamOneNumHits.html()) + 1)
         body.css({"background-color" : "red"})
+        audio.play();
       }
     })
 
@@ -82,7 +86,7 @@
 
       teamTwoNumShots.html(parseInt(teamTwoNumShots.html()) + 1);
 
-      audio.play();
+      
 
       function getRandomInt(min, max) {
         min = Math.ceil(min);
@@ -93,8 +97,9 @@
       const randomNumber = getRandomInt(0, 100);
       console.log(randomNumber);
       if(randomNumber > 60){
-        teamOneNumHits.html(parseInt(teamOneNumHits.html()) + 1);
+        teamTwoNumHits.html(parseInt(teamTwoNumHits.html()) + 1);
         body.css({"background-color" : "blue"})
+        audio.play();
       }
     })
 
